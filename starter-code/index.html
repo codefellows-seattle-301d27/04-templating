@@ -10,7 +10,21 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+    <script type="text/x-handlebars-template" id="handlebarsTemplate">
 
+      <article class="template" data-category="{{category}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            published <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
+          </div>
+        </header>
+        <section class="article-body">{{body}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+
+    </script>
     <!--
       TODO: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
@@ -54,6 +68,7 @@
             </li>
           </ul>
         </div>
+        <!-- populate article here -->
       </section>
       <section id="about" class="tab-content">
         <header>
