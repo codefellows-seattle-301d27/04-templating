@@ -19,6 +19,16 @@
         - Insert placeholder keys.
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
+    <div id="content-placeholder"></div>
+    <script type="text/x-handlebars-template" id="articlesTemplate">
+      <div> {{#each articles}} //context
+        <h2>{{this.title}}</h2>
+        <h3>{{this.author}}; {{this.authorUrl}}</h3>
+        <h4>{{this.category}}</h4>
+        <h4>{{this.publishedOn}}</h4>
+        <p>{{this.body}}</p>
+      </div>
+    </script>
   </head>
   <body>
     <header class="site-header clearfix">
@@ -75,6 +85,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- TODO: Include Handlebars.JS from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
