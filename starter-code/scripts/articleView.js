@@ -22,30 +22,25 @@ articleView.populateFilters = function() {
 };
 
 articleView.handleAuthorFilter = function() {
-  $('#author-filter').on('change', function() {
-    if ($(this).val()) {
-      $('article').hide();
-      $(`article[data-author="${$(this).val()}"]`).fadeIn();
-    } else {
-      $('article').fadeIn();
-      $('article.template').hide();
-    }
-    $('#category-filter').val('');
-  });
+  filterListener('author');
 };
 
 articleView.handleCategoryFilter = function() {
-  $('#category-filter').on('change', function() {
+  filterListener('category')
+};
+
+function filterListener(type) {
+  $(`#${type}-filter`).on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $(`article[data-category="${$(this).val()}"]`).fadeIn();
+      $(`article[data-${type}="${$(this).val()}"]`).fadeIn();
     } else {
       $('article').fadeIn();
       $('article.template').hide();
     }
-    $('#author-filter').val('');
+    $(`#${type === 'category' ? 'author' : 'category'}-filter`).val('');
   });
-};
+}
 
 articleView.handleMainNav = function() {
   $('.main-nav').on('click', '.tab', function() {
