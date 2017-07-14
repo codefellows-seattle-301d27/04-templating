@@ -20,8 +20,8 @@
         - If your object doesn't have values you need yet, you can add those properties in the model.
         est: 15min act: 10min
     -->
-    <script type="text/x-handlebars-template" id="handlebarsTemplate">
-      <article class="template" data-category="cat">
+    <script type="text/x-handlebars-template" id="articleTemplate">
+      <article data-category="{{category}}" data-author="{{author}}">
         <header>
           <h1>{{title}}</h1>
           <div class="byline">
@@ -29,7 +29,11 @@
             published <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
           </div>
         </header>
-        <section class="article-body">{{body}}</section>
+        <section class="article-body">
+          <div>
+           {{{body}}}
+         </div>
+        </section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
@@ -69,6 +73,11 @@
           </ul>
         </div>
       </section>
+
+      <section>
+        <div id="articlesTemplatedTree"></div>
+      </section>
+
       <section id="about" class="tab-content">
         <header>
           Welcome to my Blog
@@ -89,10 +98,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- DONE: Include Handlebars.JS from a CDN
-    est: 5min act: 2min-->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.amd.min.js"
-      integrity="sha256-sGnuIS7zzSwPuJtgNZG7XlqF5TQ7vLUoVAqgt11stM4=" crossorigin="anonymous">
+    est: 10min act: 5min-->
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.8/handlebars.min.js">
     </script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
