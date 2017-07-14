@@ -16,8 +16,9 @@ Article.prototype.toHtml = function() {
   //       - Get your template from the DOM.
   //       - Now "compile" your template with Handlebars.
 
-  var templateHtml = $('#article-template').html();
-  var articleHtml = Handlebars.compile(templateHtml);
+  var templateHTML = $('#article-template').html();
+  var articleHTMLgenerator = Handlebars.compile(templateHTML);
+  console.dir(articleHTMLgenerator)
 
   // REVIEW: If your template will use properties that aren't on the object yet, add them.
   //   Since your template can't hold any JS logic, we need to execute the logic here.
@@ -27,6 +28,9 @@ Article.prototype.toHtml = function() {
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
+  var articleHTML = articleHTMLgenerator(this);
+  console.log(articleHTML)
+  $('#articles').append(articleHTML);
 
 };
 
