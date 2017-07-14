@@ -26,7 +26,6 @@ Article.prototype.toHtml = function() {
 
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
   var html = compiled(this);
-  console.log(html);
   return html;
 
 };
