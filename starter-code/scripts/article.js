@@ -39,5 +39,5 @@ rawData.forEach(function(articleObject) {
 });
 
 articles.forEach(function(article){
-  $('#handlebarsTemplatedTree').append(article.toHtml());
+  $('#articles').append(article.toHtml());
 });
