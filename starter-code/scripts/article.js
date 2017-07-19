@@ -42,8 +42,6 @@ rawData.forEach(function(articleObject) {
   articles.push(new Article(articleObject));
 });
 
-console.log(articles);
-
 articles.forEach(function(article) {
   $('#articles').append(article.toHtml());
 
