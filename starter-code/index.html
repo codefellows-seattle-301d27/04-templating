@@ -20,6 +20,21 @@
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
     <!-- done, took about 30 minutes -->
+    <script type="text/x-handlebars-template" id="handlebarsTemplate">
+      <article data-category="{{category}}" data-author="{{author}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            <time>published {{daysAgo}} days ago</time>
+          </div>
+        </header>
+        <section class="article-body">
+          {{{body}}}
+        </section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
   </head>
   <body>
     <header class="site-header clearfix">
@@ -55,21 +70,6 @@
             </li>
           </ul>
         </div>
-        <script type="text/x-handlebars-template" id="handlebarsTemplate">
-          <article data-category="{{category}}" data-author="{{author}}">
-            <header>
-              <h1>{{title}}</h1>
-              <div class="byline">
-                By <address><a href="{{authorUrl}}">{{author}}</a></address>
-                <time>published {{daysAgo}} days ago</time>
-              </div>
-            </header>
-            <section class="article-body">
-              {{{body}}}
-            </section>
-            <a href="#" class="read-on">Read on &rarr;</a>
-          </article>
-        </script>
       </section>
       <section id="about" class="tab-content">
         <header>
