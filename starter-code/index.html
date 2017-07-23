@@ -19,9 +19,22 @@
         - Insert placeholder keys.
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
+    <script id="article-handlebarTemplate" type="text/x-handlebars-template">
+      <article class="template" data-category="{{cat}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="">{{authorName}}</a></address>
+            published <time pubdate datetime="2000-01-01">{{publishTime}}</time>
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
   </head>
   <body>
-    <header class="site-header clearfix">
+    <header class="site-header">
       <section class="heading-group-h1">
         <h1>
           Kilovolt Blog!
